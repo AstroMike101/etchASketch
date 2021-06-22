@@ -1,16 +1,45 @@
-const container = document.querySelector('.container');
-let rows = document.querySelector('.gridRow')
-let cells = document.querySelector('.cell')
+const container = document.getElementById("container");
+let rows = document.getElementsByClassName("gridRow");
+let cell = document.querySelectorAll(".cell");
+const cellArr = Array.from(cell);
 
 
-for (i=0; i<256; i++) {
-    const gridDiv = document.createElement('div');
-    gridDiv.classList.add('grid');
-    container.appendChild(gridDiv);
 
+
+
+
+//Takes (rows, columns) input and makes a grid
+function makeRows(rowNum) {
+
+    //Creates rows
+    for (r = 0; r < rowNum; r++) {
+        let row = document.createElement("div");
+        container.appendChild(row).className = "gridRow";
+    };
+};
+
+//Creates columns
+function makeColumns(cellNum) {
+    for (i = 0; i < rows.length; i++) {
+        for (j = 0; j < cellNum; j++) {
+            let newCell = document.createElement("div");
+            rows[j].appendChild(newCell).className = "cell";
+        };
+
+    };
+};
+
+//Creates a default grid sized 16x16 
+function defaultGrid() {
+    makeRows(16);
+    makeColumns(16);
 }
 
-function grid() {
-    makeRows();
-    makeColumns();
+defaultGrid();
+
+function h() {
+    console.log('h');
 }
+
+
+
