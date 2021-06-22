@@ -5,24 +5,78 @@
 
 @font-face {
     font-family: gameFont;
-    src: url('/styles/gameFont.ttf');
+    src: url('/styles/assets/gameFont.ttf');
+  }
+
+
+  body {
+      background-color: #ededed;
   }
 
 h1 {
+
     text-align: center;
     font-family: gameFont;
     font-size: 3em;
     color: black;
+    animation-name: colorChange;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
    
 }
 
+
+
+
+@keyframes colorChange {
+    0% {
+        color:rgb(65, 139, 65);
+    }
+    
+    25% {
+        color:rgb(182, 226, 236) ;
+
+    }
+
+    50% {
+        color: rgb(69, 69, 175);
+    }
+
+    75% {
+        color: rgb(255, 204, 225);
+
+    }
+
+    100% {
+        color:rgb(167, 77, 77);
+    }
+}
+
+
+
+
+
 #container {
     display:flex;
+    position: relative;
+    top: 6em;
+    justify-content: center;
+    align-items: center;
+    
     
 }
 
-.gridRow, .cell { 
-    border: 1px solid black;
+ .cell { 
+    border:  0.0625px solid black;
+    min-width: 1.5em;
+    min-height: 1.5em;
+    
+    
+        
 }
 
 
+
+.black { 
+    color: black;
+}
