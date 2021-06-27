@@ -1,7 +1,8 @@
 const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cell = document.querySelectorAll(".cell");
-const cellArr = Array.from(cell);
+
+
 
 
 
@@ -29,6 +30,8 @@ function makeColumns(cellNum) {
     };
 };
 
+
+
 //Creates a default grid sized 16x16 
 function defaultGrid() {
     makeRows(16);
@@ -37,9 +40,6 @@ function defaultGrid() {
 
 defaultGrid();
 
-function h() {
-    console.log('h');
-}
 
 
 

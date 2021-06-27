@@ -10,12 +10,12 @@
 
 
   body {
-      background-color: #ededed;
+      background-color: #f5f5f5;
   }
 
 h1 {
-
     text-align: center;
+    text-decoration: underline;
     font-family: gameFont;
     font-size: 3em;
     color: black;
@@ -23,6 +23,10 @@ h1 {
     animation-duration: 10s;
     animation-iteration-count: infinite;
    
+}
+
+h1:hover {
+    transform: scale(1.1);
 }
 
 
