@@ -25,6 +25,21 @@ h1 {
    
 }
 
+.buttons { 
+    display:flex;
+    justify-content: space-evenly;
+    
+}
+
+
+button {
+    position: relative;
+    top:2em;
+    padding: .3em;
+}
+
+
+
 h1:hover {
     transform: scale(1.1);
 }
