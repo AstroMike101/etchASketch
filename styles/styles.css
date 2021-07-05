@@ -15,13 +15,13 @@
 
 h1 {
     text-align: center;
-    text-decoration: underline;
     font-family: gameFont;
     font-size: 3em;
     color: black;
     animation-name: colorChange;
     animation-duration: 10s;
     animation-iteration-count: infinite;
+   
    
 }
 
@@ -73,8 +73,6 @@ h1:hover {
 
 
 
-
-
 #container {
     display:flex;
     position: relative;
@@ -82,8 +80,74 @@ h1:hover {
     justify-content: center;
     align-items: center;
     
-    
 }
+
+#footerdiv {
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;   
+    text-align:center;
+    background-color:#D4D4D4;
+    color:white;
+    overflow:hidden;
+
+  }
+
+
+  #content-wrap {
+    padding-top: 8em;
+  }
+
+
+  #footer {
+    color:black;
+    position: relative;
+    top: 10px;
+    bottom: 0;
+    width: 100%;
+    height: 2.5rem;     
+        
+  }
+
+  #githubHover { 
+    transform: scale(1.5);
+    color:red;
+    text-decoration: none;
+    animation-name: githubHover;
+    animation-duration: 10s;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes githubHover {
+    0% {
+        color:rgb(65, 139, 65);
+    }
+    
+    25% {
+        color:rgb(171,132,87)
+    }
+
+    50% {
+        color: rgb(69, 69, 175);
+    }
+
+    75% {
+        color: rgb(244,117,75)
+
+    }
+
+    100% {
+        color:rgb(167, 77, 77);
+    }
+}
+
+
+
+
+
 
  .cell { 
     border:  0.0625px solid black;
@@ -96,6 +160,4 @@ h1:hover {
 
 
 
-.black { 
-    color: black;
-}
+
