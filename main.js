@@ -2,6 +2,7 @@ const container = document.getElementById("container");
 let rows = document.getElementsByClassName("gridRow");
 let cell = document.querySelectorAll(".cell");
 let reset = document.querySelector('.reset');
+let newGrid; 
 
 
 
@@ -59,6 +60,7 @@ defaultGrid();
 function removeDivs () {
     document.querySelectorAll('.cell').forEach(e => e.remove()); 
     document.querySelectorAll('.gridRow').forEach(e => e.remove()); 
+
     
 }
 
@@ -68,7 +70,10 @@ function removeDivs () {
 function resetAll() {
     removeDivs();
     defaultGrid();
-
+    newGrid = prompt('What size do you want your new grid to be?');
+    removeDivs();
+    makeRows(newGrid);
+    makeColumns(newGrid);
 }
 
 
