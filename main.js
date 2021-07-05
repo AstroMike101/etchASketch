@@ -43,8 +43,8 @@ let n = 0;
 
 //Creates a default grid sized 16x16 
 function defaultGrid() {
-    makeRows(16);
-    makeColumns(16);
+    makeRows(12);
+    makeColumns(12);
     n++;
     console.log(n);
     
