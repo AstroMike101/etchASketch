@@ -70,10 +70,17 @@ function removeDivs () {
 function resetAll() {
     removeDivs();
     defaultGrid();
-    newGrid = prompt('What size do you want your new grid to be?');
+    newGrid = prompt('What size do you want your new grid to be? Maximum size is 100.');
     removeDivs();
-    makeRows(newGrid);
-    makeColumns(newGrid);
+    
+    if (newGrid <=100) {
+        makeRows(newGrid);
+        makeColumns(newGrid);
+    }
+    else { 
+        alert('You inserted a size over 100!');
+    }
+    
 }
 
 
