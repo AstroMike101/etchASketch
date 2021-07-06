@@ -1,5 +1,6 @@
+# Preview 
+<img src = 'styles/assets/preview.png' width = '700' height = '500'> </img>
 
-![Preview](/relative/path/to/preview.png?raw=true "preview")
 
 
 
@@ -12,7 +13,7 @@
 This is my implementation of [Etch A Sketch](https://en.wikipedia.org/wiki/Etch_A_Sketch). It features a reset button which allows the user to reset the grid, as well as specify the new grid size. 
 
 ---
-#### Languages Used
+### Languages Used
 
 - HTML
 - CSS
