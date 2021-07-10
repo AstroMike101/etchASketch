@@ -31,7 +31,7 @@ function makeRows(rowNum) {
 //Creates columns
 function makeColumns(cellNum) {
     for (let i = 0; i < rows.length; i++) {
-        for (j = 0; j < cellNum; j++) {
+        for (let j = 0; j < cellNum; j++) {
             let newCell = document.createElement("div");
             rows[j].appendChild(newCell).className = "cell";
         };
