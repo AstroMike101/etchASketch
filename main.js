@@ -21,7 +21,7 @@ function changeColor(e) {
 function makeRows(rowNum) {
 
     //Creates rows
-    for (r = 0; r < rowNum; r++) {
+    for (let r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         row.addEventListener("mouseover", changeColor);
         container.appendChild(row).className = "gridRow";
@@ -30,7 +30,7 @@ function makeRows(rowNum) {
 
 //Creates columns
 function makeColumns(cellNum) {
-    for (i = 0; i < rows.length; i++) {
+    for (let i = 0; i < rows.length; i++) {
         for (j = 0; j < cellNum; j++) {
             let newCell = document.createElement("div");
             rows[j].appendChild(newCell).className = "cell";
