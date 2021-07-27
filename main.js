@@ -3,12 +3,27 @@ let rows = document.getElementsByClassName("gridRow");
 let cell = document.querySelectorAll(".cell");
 let reset = document.querySelector('.reset');
 let newGrid; 
+let gray = document.querySelector('.gray');
+let rainbowColors= document.querySelector('.rainbowColors');
+
+
+function black(e) {
+    
+    e.target.style.backgroundColor = `rgb(0, 0, 0)`;
+
+  }
+
+
+function greyScale(e) {
+    
+    e.target.style.backgroundColor = `rgb(128, 128, 128)`;
+
+
+  }
 
 
 
-
-
-function changeColor(e) {
+function rainbowColor(e) {
     const randomR = Math.floor(Math.random() * 256);
     const randomG = Math.floor(Math.random() * 256);
     const randomB = Math.floor(Math.random() * 256);
@@ -23,7 +38,16 @@ function makeRows(rowNum) {
     //Creates rows
     for (let r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
-        row.addEventListener("mouseover", changeColor);
+
+        row.addEventListener("mouseover", black);
+
+        rainbowColors.addEventListener('click', () => {
+            row.addEventListener("mouseover", rainbowColor);
+        })
+        
+        gray.addEventListener('click', () => {
+            row.addEventListener("mouseover", greyScale);
+        })
         container.appendChild(row).className = "gridRow";
     };
 };
