@@ -38,14 +38,9 @@ button {
     padding: .3em;
 }
 
-button:hover { 
-    transform: scale(1.1);
-}
 
 
-h1:hover {
-    transform: scale(1.1);
-}
+
 
 
 
