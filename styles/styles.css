@@ -27,7 +27,8 @@ h1 {
 
 .buttons { 
     display:flex;
-    justify-content:space-evenly
+    justify-content:center;
+    
     
 }
 
@@ -35,7 +36,10 @@ h1 {
 button {
     position: relative;
     top:2em;
-    padding: .3em;
+    padding: .5em;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px black;
+    cursor:pointer;
 }
 
 

@@ -3,11 +3,16 @@ let rows = document.getElementsByClassName("gridRow");
 let cell = document.querySelectorAll(".cell");
 let reset = document.querySelector('.reset');
 let newGrid; 
+let black= document.querySelector('.black');
 let gray = document.querySelector('.gray');
 let rainbowColors= document.querySelector('.rainbowColors');
+let eraser = document.querySelector('.eraser');
 
 
-function black(e) {
+
+
+
+function blackColor(e) {
     
     e.target.style.backgroundColor = `rgb(0, 0, 0)`;
 
@@ -21,7 +26,12 @@ function greyScale(e) {
 
   }
 
+  function erasers(e) {
+    
+    e.target.style.backgroundColor = `rgb(255, 255, 255)`;
 
+
+  }
 
 function rainbowColor(e) {
     const randomR = Math.floor(Math.random() * 256);
@@ -30,7 +40,7 @@ function rainbowColor(e) {
     e.target.style.backgroundColor = `rgb(${randomR}, ${randomG}, ${randomB})`;
   }
 
-
+ 
 
 //Takes (rows, columns) input and makes a grid
 function makeRows(rowNum) {
@@ -38,19 +48,39 @@ function makeRows(rowNum) {
     //Creates rows
     for (let r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
-
-        row.addEventListener("mouseover", black);
+        
+        row.addEventListener("mouseover", blackColor);
 
         rainbowColors.addEventListener('click', () => {
             row.addEventListener("mouseover", rainbowColor);
+        })
+
+        eraser.addEventListener('click', () => {
+            row.addEventListener("mouseover", erasers);
+        })
+
+        black.addEventListener('click', () => {
+            row.addEventListener("mouseover", blackColor);
         })
         
         gray.addEventListener('click', () => {
             row.addEventListener("mouseover", greyScale);
         })
+
+        
         container.appendChild(row).className = "gridRow";
+        
     };
+
+
 };
+
+
+
+
+
+
+
 
 //Creates columns
 function makeColumns(cellNum) {
@@ -58,12 +88,17 @@ function makeColumns(cellNum) {
         for (let j = 0; j < cellNum; j++) {
             let newCell = document.createElement("div");
             rows[j].appendChild(newCell).className = "cell";
+            
         };
+        
 
     };
 };
 
 let n = 0; 
+
+
+
 
 //Creates a default grid sized 16x16 
 function defaultGrid() {
