@@ -49,23 +49,25 @@ function makeRows(rowNum) {
     for (let r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         
-        row.addEventListener("mouseover", blackColor);
+        // row.addEventListener("mouseover", blackColor);
 
-        rainbowColors.addEventListener('click', () => {
-            row.addEventListener("mouseover", rainbowColor);
-        })
+        // rainbowColors.addEventListener('click', () => {
+        //     row.addEventListener("mouseover", rainbowColor);
+        // })
 
-        eraser.addEventListener('click', () => {
-            row.addEventListener("mouseover", erasers);
-        })
+        // eraser.addEventListener('click', () => {
+        //     row.addEventListener("mouseover", erasers);
+        // })
 
-        black.addEventListener('click', () => {
-            row.addEventListener("mouseover", blackColor);
-        })
+        // black.addEventListener('click', () => {
+        //     row.addEventListener("mouseover", blackColor);
+        // })
         
-        gray.addEventListener('click', () => {
-            row.addEventListener("mouseover", greyScale);
-        })
+        // gray.addEventListener('click', () => {
+        //     row.addEventListener("mouseover", greyScale);
+        // })
+
+
 
         
         container.appendChild(row).className = "gridRow";
@@ -74,6 +76,8 @@ function makeRows(rowNum) {
 
 
 };
+
+
 
 
 
@@ -113,6 +117,28 @@ function defaultGrid() {
 
 defaultGrid();
 
+
+
+
+
+    rainbowColors.addEventListener('click', () => {
+        for (let i=0; i<rows.length; i++){ 
+            rows[i].addEventListener('mouseover' , rainbowColor);
+        }
+
+    })
+    
+
+
+ eraser.addEventListener('click', () => { 
+     for (let i=0; i<rows.length; i++){
+        rows[i].addEventListener('mouseover' , erasers);
+     }
+ })
+   
+
+
+    
 
 
 
