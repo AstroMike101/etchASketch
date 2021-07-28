@@ -10,8 +10,6 @@ let eraser = document.querySelector('.eraser');
 
 
 
-
-
 function blackColor(e) {
     
     e.target.style.backgroundColor = `rgb(0, 0, 0)`;
@@ -49,41 +47,16 @@ function makeRows(rowNum) {
     for (let r = 0; r < rowNum; r++) {
         let row = document.createElement("div");
         
-        // row.addEventListener("mouseover", blackColor);
-
-        // rainbowColors.addEventListener('click', () => {
-        //     row.addEventListener("mouseover", rainbowColor);
-        // })
-
-        // eraser.addEventListener('click', () => {
-        //     row.addEventListener("mouseover", erasers);
-        // })
-
-        // black.addEventListener('click', () => {
-        //     row.addEventListener("mouseover", blackColor);
-        // })
         
-        // gray.addEventListener('click', () => {
-        //     row.addEventListener("mouseover", greyScale);
-        // })
 
 
-
-        
+    
         container.appendChild(row).className = "gridRow";
         
     };
 
 
 };
-
-
-
-
-
-
-
-
 
 
 //Creates columns
@@ -109,7 +82,7 @@ function defaultGrid() {
     makeRows(12);
     makeColumns(12);
     n++;
-    console.log(n);
+    
     
 }
 
@@ -120,26 +93,99 @@ defaultGrid();
 
 
 
+//add 'active' class if button clicked
 
-    rainbowColors.addEventListener('click', () => {
-        for (let i=0; i<rows.length; i++){ 
-            rows[i].addEventListener('mouseover' , rainbowColor);
-        }
+let buttons = document.getElementsByTagName('button');
 
-    })
-    
+rainbowColors.addEventListener('click', () => { 
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    rainbowColors.classList.add('active');
+    checkActive();
 
+   
+ 
 
- eraser.addEventListener('click', () => { 
-     for (let i=0; i<rows.length; i++){
-        rows[i].addEventListener('mouseover' , erasers);
-     }
- })
+}
+)
    
 
+eraser.addEventListener('click',() => { 
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    eraser.classList.add('active');
+    checkActive();
+}
+)
 
-    
 
+black.addEventListener('click',() => { 
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].classList.remove('active');
+    }
+    black.classList.add('active');
+    checkActive();
+}
+)
+
+gray.addEventListener('click',() => { 
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].classList.remove('active');
+
+    }
+    gray.classList.add('active');
+    checkActive();
+}
+)
+
+function checkActive() { 
+    if (rainbowColors.classList.contains('active')) { 
+        for (let i=0; i<rows.length; i++){
+            rows[i].removeEventListener("mouseover", erasers);
+            rows[i].removeEventListener("mouseover", blackColor);
+        }
+        for (let i=0; i<rows.length; i++){
+            rows[i].addEventListener("mouseover", rainbowColor);
+        }
+    } 
+
+
+    else if (eraser.classList.contains('active')) {
+        for (let i=0; i<rows.length; i++){
+            rows[i].removeEventListener("mouseover", rainbowColor);
+            rows[i].removeEventListener("mouseover", blackColor);
+        }
+        for (let i=0; i<rows.length; i++){
+            rows[i].addEventListener("mouseover", erasers);
+        }
+
+    }
+
+    else if (black.classList.contains('active')){
+        for (let i=0; i<rows.length; i++){
+            rows[i].removeEventListener("mouseover", rainbowColor);
+            rows[i].removeEventListener("mouseover", erasers);
+        }
+        for (let i=0; i<rows.length; i++){
+            rows[i].addEventListener("mouseover", blackColor);
+        }
+    }
+
+    else {
+        for (let i=0; i<rows.length; i++){
+            rows[i].removeEventListener("mouseover", rainbowColor);
+            rows[i].removeEventListener("mouseover", erasers);
+            rows[i].removeEventListener("mouseover", blackColor);
+        }
+        for (let i=0; i<rows.length; i++){
+            rows[i].addEventListener("mouseover", greyScale);
+        }
+
+    }
+
+}
 
 
 function removeDivs () {
