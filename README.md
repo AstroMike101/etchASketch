@@ -1,5 +1,5 @@
 # Preview 
-<img src = 'styles/assets/preview.png' width = '700' height = '500'> </img>
+<img src = 'styles/assets/pic.png' width = '700' height = '500'> </img>
 
 
 
